@@ -5,58 +5,61 @@
   "options": {
     "validateUpsert": true
   },
-  "foreignKey": {
-    "memId": {
-      "name": "memId",
-      "foreignKey": "memId",
-      "entityKey": "id",
-      "entity": "member"
-    },
-    "bookId": {
-      "name": "bookId",
-      "foreignKey": "bookId",
-      "entityKey": "id",
-      "entity": "book"
-    }
-  },
-
-  "properties": {
+    "properties": {
     "id": {
       "type": "number",
       "required": true
     },
-    "memId": {
+
+    "bookId": {
       "type": "number",
       "required": true
     },
-    "borrowId": {
-      "type": "number",
+	
+	"memId":{
+	  "type": "number",
       "required": true
-    },
+	
+	},
     "issueDate": {
       "type": "date",
       "required": true
     },
+     "expDate": {
+        "type": "date",
+        "required": true
+     },
     "returnedDate": {
       "type": "date",
       "required": true
     }
   },
+  "foreignKey": {
+    "memId": {
+      "name": "memId",
+      "foreignKey": "memId",
+      "entity": "member",
+      "entityKey": "id"
+    },
+    "bookId": {
+      "name": "bookId",
+      "foreignKey": "bookId",
+      "entity": "book",
+      "entityKey": "id"
+    }
+  },
+
   "validations": [],
   "relations": {
-    "memberId": {
+    "memId": {
       "type": "belongsTo",
       "model": "member",
       "foreignKey": "memId"
-
-
     },
     "bookId": {
       "type": "hasOne",
       "model": "book",
       "foreignKey": "bookId"
-
-
     }
 
   },

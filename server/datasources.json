@@ -1,0 +1,12 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 3306,
+    "database": "LibrarySystem",
+    "password": "hansani",
+    "name": "db",
+    "user": "root",
+    "connector": "mysql",
+    "createDatabase": true
+  }
+}
